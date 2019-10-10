@@ -1,6 +1,14 @@
+/*
+ * @Author: Siwen
+ * @Date: 2019-10-10 14:00:20
+ * @LastEditors: Siwen
+ * @LastEditTime: 2019-10-10 14:00:20
+ * @Description: 
+ */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import 'lib-flexible'
+import './index.scss';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
