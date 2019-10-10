@@ -2,12 +2,12 @@
  * @Author: Siwen
  * @Date: 2019-09-17 14:29:01
  * @LastEditors: Siwen
- * @LastEditTime: 2019-10-10 14:16:43
+ * @LastEditTime: 2019-10-10 15:02:06
  * @Description: 路由表
  */
 import React from 'react'
-const Home = React.lazy(() => import('../views/Home'))
+const Recommend = React.lazy(() => import('../views/Recommend'))
 
 export default [
-  { path: '/', name: 'Home', meta: {}, component: Home },
+  { path: '/recommend', name: 'Recommend', meta: {}, component: Recommend },
 ]

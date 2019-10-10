@@ -2,7 +2,7 @@
  * @Author: Siwen
  * @Date: 2019-08-08 13:47:01
  * @LastEditors: Siwen
- * @LastEditTime: 2019-09-18 16:54:29
+ * @LastEditTime: 2019-10-10 16:55:36
  * @Description: axios封装
  */
 import axios from 'axios'
@@ -58,10 +58,10 @@ axios.interceptors.response.use(
     const res = response.data
     if (typeof res === 'string') {
       return res
-    } else if (!res.success) {
+    } else if (res.code !== 200) {
       return Promise.reject(res.error)
     } else {
-      return res.payload || {}
+      return res || {}
     }
   },
   error => {

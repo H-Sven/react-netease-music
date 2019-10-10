@@ -1,0 +1,35 @@
+.slider_contauber {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  background: white;
+  &::after {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 60%;
+    background-color:#d44439;
+  }
+  .slider-container{
+    position: relative;
+    width: 98%;
+    height: 300px;
+    overflow: hidden;
+    margin: auto;
+    border-radius: 6px;
+    .slider-nav{
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+    .swiper-pagination-bullet-active{
+      // background: ${style["theme-color"]};
+    }
+  }
+}
