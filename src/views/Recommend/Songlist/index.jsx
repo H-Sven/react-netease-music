@@ -1,12 +1,11 @@
 import React, { useEffect } from 'react'
 import { withRouter } from 'react-router-dom'
 import './index.scss'
-
-import stores from '../../../store'
+import store from '../../../store'
 
 function SongList(props) {
   const {history, match } = props
-  const personalized = stores.useStore('personalized')
+  const personalized = store.useStore('personalized')
   const { personalizedList, getPersonalizedList } = personalized
 
   useEffect(() => {

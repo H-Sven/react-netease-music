@@ -1,0 +1,22 @@
+.scroll_container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.pullup_loading {
+  position: absolute;
+  left:0; right:0;
+  bottom: 5px;
+  width: 60px;
+  height: 60px;
+  margin: auto;
+  z-index: 100;
+}
+.pulldown_loading {
+  position: absolute;
+  left:0; right:0;
+  top: 0px;
+  height: 30px;
+  margin: auto;
+  z-index: 100;
+}

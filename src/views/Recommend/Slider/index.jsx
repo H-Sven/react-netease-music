@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react'
 import './index.scss'
 import 'swiper/css/swiper.min.css'
 import Swiper from 'swiper'
-import stores from '../../../store'
+import store from '../../../store'
 
 
 function Slider(props) {
   const [sliderSwiper, setSliderSwiper] = useState(null)
-  const banner = stores.useStore('banner')
+  const banner = store.useStore('banner')
   
   const { bannerList, getBannerList } = banner
 
@@ -28,6 +28,7 @@ function Slider(props) {
 
   return (
     <div className="slider_contauber">
+      <div className="before"></div>
       <div className="slider-container">
         <div className="swiper-wrapper">
           {

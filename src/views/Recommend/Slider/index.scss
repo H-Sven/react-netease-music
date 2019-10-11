@@ -5,15 +5,13 @@
   height: 100%;
   margin: auto;
   background: white;
-  &::after {
-    display: inline-block;
+  .before {
     position: absolute;
-    top: 0;
-    left: 0;
-    content: '';
+    top: -300px;
+    height: 500px;
     width: 100%;
-    height: 60%;
-    background-color:#d44439;
+    z-index: 1;
+    background: rgb(212, 68, 57);
   }
   .slider-container{
     position: relative;
