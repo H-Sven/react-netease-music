@@ -17,6 +17,13 @@ function DetailInfo(props) {
     avatarUrl: '',
     opacity: 0
   })
+  const [operating] = useState([
+    { icon: 'icon-pinglun', icon1: 'icon-pinglun',title: '评论', type: 1 },
+    { icon: 'icon-xihuan', icon1: 'icon-xihuan1', title: '点赞', type: 2 },
+    { icon: 'icon-hao', icon1: 'icon-hao',title: '收藏', type: 3 },
+    { icon: 'icon-gengduo', icon1: 'icon-gengduo',title: '更多', type: 4 }
+  ])
+  const [xihuan, changeXihuan] = useState(false)
   useEffect(() => {
     getDetailInfo(props.detailInfo)
     setBackGround({
@@ -29,6 +36,14 @@ function DetailInfo(props) {
       backgroundColor: +props.opacity < 1 ? 'red' : ''
     })
   }, [props.opacity])
+
+  const clickOperating = title => {
+    if(title === '点赞') {
+      changeXihuan(!xihuan)
+    } else {
+      alert(`点击了${title}`)
+    }
+  }
 
   return (
     <div className="detail_info">
@@ -54,6 +69,16 @@ function DetailInfo(props) {
           </div>
           <div className="name">{detailInfo.nickname}</div>
         </div>
+      </div>
+      <div className="operating">
+        {operating.map(item => {
+          return (
+            <div className="operating_item" key={item.type} onClick={() => clickOperating(item.title)}>
+              <i className={`iconfont ${xihuan ? item.icon1: item.icon}`}></i>
+              <div className="title">{item.title}</div>
+            </div>
+          )
+        })}
       </div>
     </div>
   )

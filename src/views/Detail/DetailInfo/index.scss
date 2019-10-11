@@ -1,6 +1,6 @@
 .detail_info {
   width: 100vw;
-  height: 500px;
+  height: 550px;
   position: relative;
   display: flex;
   align-items: center;
@@ -48,7 +48,6 @@
   }
   .img_warpper {
     position: relative;
-    margin-top: 50px;
     width: 240px;
     height: 240px;
     .cover_img {
@@ -74,7 +73,6 @@
     }
   }
   .desc_wrapper {
-    margin-top: 50px;
     height: 240px;
     display: flex;
     flex-direction: column;
@@ -108,6 +106,27 @@
         line-height: 20px;
         font-size: 28px;
         color: rgb(187, 168, 168);
+      }
+    }
+  }
+  .operating {
+    position: absolute;
+    width: 85%;
+    bottom: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .operating_item {
+      display: flex;
+      flex-direction: column;
+      line-height: 40px;
+      text-align: center;
+      font-size: 24px;
+      color: rgb(241, 241, 241);
+      z-index: 1000;
+      font-weight: 500;
+      .iconfont {
+        font-size: 40px;
       }
     }
   }
