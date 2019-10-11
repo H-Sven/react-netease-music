@@ -2,7 +2,7 @@
  * @Author: Siwen
  * @Date: 2019-10-10 14:00:20
  * @LastEditors: Siwen
- * @LastEditTime: 2019-10-10 17:36:18
+ * @LastEditTime: 2019-10-11 17:34:58
  * @Description: 
  -->
 
@@ -20,5 +20,10 @@ $ node app.js  //启动之前建议修改端口号
 ```
 
 
-### `npm start` 启动项目
+### 启动前端项目 （启动之前先安装好云音乐api）
+```
+`npm i` 
+
+`npm start`
+```
 
