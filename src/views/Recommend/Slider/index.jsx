@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import './index.scss'
 import 'swiper/css/swiper.min.css'
 import Swiper from 'swiper'
-import stores from '../../store'
+import stores from '../../../store'
 
 
 function Slider(props) {
@@ -25,6 +25,7 @@ function Slider(props) {
       setSliderSwiper(sliderSwiper);
     }
   }, [bannerList.length, sliderSwiper])
+
   return (
     <div className="slider_contauber">
       <div className="slider-container">
