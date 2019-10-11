@@ -1,0 +1,114 @@
+.detail_info {
+  width: 100vw;
+  height: 500px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px 40px 100px;
+  .back_box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 80px;
+    width: 100%;
+    z-index: 100;
+    display: flex;
+    line-height: 80px;
+    color: rgb(241, 241, 241);
+    padding: 0px 20px 10px;
+    .icon-xia {
+      margin-right: 10px;
+      font-size: 40px;
+      width: 40px;
+    }
+    .title {
+      font-size: 32px;
+      font-weight: 700;
+    }
+  }
+  .background {
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    filter: blur(20px);
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+    background-size: 100% 100%;
+    position: absolute;
+    .filter {
+      position: absolute;
+      z-index: 10;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+      background: rgba(7, 17, 27, 0.2);
+    }
+  }
+  .img_warpper {
+    position: relative;
+    margin-top: 50px;
+    width: 240px;
+    height: 240px;
+    .cover_img {
+      width: 100%;
+      height: 100%;
+      border-radius: 6px;
+    }
+    .play_count {
+      position: absolute;
+      right: 0;
+      top: 0;
+      color: rgb(241, 241, 241);
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+      .icon-erji {
+        font-size: 20px;
+      }
+      .count {
+        padding: 0 10px;
+      }
+    }
+  }
+  .desc_wrapper {
+    margin-top: 50px;
+    height: 240px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    flex: 1 1 0%;
+    padding: 0px 20px;
+    .title {
+      max-height: 70px;
+      text-overflow: ellipsis;
+      color: rgb(241, 241, 241);
+      font-weight: 700;
+      line-height: 1.5;
+      font-size: 32px;
+      overflow: hidden;
+    }
+    .person {
+      display: flex;
+      align-items: center;
+      .avatar {
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+        img {
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+        }
+      }
+      .name {
+        line-height: 20px;
+        font-size: 28px;
+        color: rgb(187, 168, 168);
+      }
+    }
+  }
+}

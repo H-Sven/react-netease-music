@@ -2,7 +2,7 @@
  * @Author: Siwen
  * @Date: 2019-10-11 13:56:20
  * @LastEditors: Siwen
- * @LastEditTime: 2019-10-11 13:57:19
+ * @LastEditTime: 2019-10-11 15:25:57
  * @Description: 工具函数
  */
 
@@ -17,5 +17,15 @@ export const debounce = (func, delay) => {
       func.apply(this, args)
       clearTimeout(timer)
     }, delay)
+  }
+}
+
+export const filterCount = count => {
+  if (`${parseInt(count)}`.length >= 5) {
+    return `${parseInt(count / 10000)}万`
+  } else if (`${parseInt(count)}`.length === 4) {
+    return `${parseInt(count / 1000)}千`
+  } else {
+    return count
   }
 }
