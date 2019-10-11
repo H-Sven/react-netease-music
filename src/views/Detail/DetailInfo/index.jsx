@@ -4,7 +4,6 @@ import { filterCount } from '../../../utils'
 import './index.scss'
 
 function DetailInfo(props) {
-  const [opacity, getOpacity] = useState()
   const [backGround, setBackGround] = useState({
     background: '#fff',
     backgroundImage: ''
@@ -30,13 +29,6 @@ function DetailInfo(props) {
       backgroundImage: `url(${props.detailInfo.coverImgUrl})`
     })
   },[] )
-  useEffect(() => {
-    getOpacity({
-      opacity: props.opacity,
-      backgroundColor: +props.opacity < 1 ? 'red' : ''
-    })
-  }, [props.opacity])
-
   const clickOperating = title => {
     if(title === '点赞') {
       changeXihuan(!xihuan)
@@ -47,10 +39,6 @@ function DetailInfo(props) {
 
   return (
     <div className="detail_info">
-      <div className="back_box" style={opacity} onClick={() => props.history.goBack() }>
-        <i className="iconfont icon-xia"></i>
-        <div className="title">歌单</div>
-      </div>
       <div className="background" style={backGround}>
         <div className="filter"></div>
       </div>

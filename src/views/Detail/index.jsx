@@ -7,9 +7,13 @@ import './index.scss'
 
 function Detail(props) {
   const { match } = props
+  const [title, setTitle] = useState('歌单')
   const [detailInfo, setDetailInfo] = useState({})
   const [tracks, setTracks] = useState([])
-  const [opacity, changeOpacity] = useState(1)
+  const [opacity, changeOpacity] = useState({
+    opacity: 1,
+    backgroundColor: ''
+  })
 
   
   useEffect(() => {
@@ -24,12 +28,30 @@ function Detail(props) {
       setTracks(res.playlist.tracks)
     })
   }, [])
-  useEffect(() => {
-    // changeOpacity(Math.random().toFixed(1))
-  }, [opacity])
+  const handleScroll = (pos) => {
+    let minScrollY = -45
+    let percent = Math.abs(pos.y/minScrollY)
+    if (pos.y < minScrollY) {
+      changeOpacity({
+        opacity: Math.min(1, (percent-1)/2),
+        backgroundColor: '#d44439'
+      })
+      setTitle(detailInfo.name)
+    } else {
+      changeOpacity({
+        opacity: 1,
+        backgroundColor: ''
+      })
+      setTitle('歌单')
+    }
+  }
   return (
     <div className="detail">
-      <Scroll>
+      <div className="back_box" style={opacity} onClick={() => props.history.goBack() }>
+        <i className="iconfont icon-xia"></i>
+        <div className="title">{title}</div>
+      </div>
+      <Scroll onScroll = { handleScroll }>
         <div>
           {JSON.stringify(detailInfo) !== '{}' && <DetailInfo detailInfo={detailInfo} opacity={opacity} />}
           {tracks.length > 0 && <Tracks tracks={tracks} />}

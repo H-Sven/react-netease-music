@@ -6,27 +6,6 @@
   align-items: center;
   justify-content: space-around;
   padding: 10px 40px 100px;
-  .back_box {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 80px;
-    width: 100%;
-    z-index: 100;
-    display: flex;
-    line-height: 80px;
-    color: rgb(241, 241, 241);
-    padding: 0px 20px 10px;
-    .icon-xia {
-      margin-right: 10px;
-      font-size: 40px;
-      width: 40px;
-    }
-    .title {
-      font-size: 32px;
-      font-weight: 700;
-    }
-  }
   .background {
     width: 100%;
     height: 100%;

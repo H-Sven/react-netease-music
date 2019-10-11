@@ -1,9 +1,14 @@
 import React from 'react'
+import './index.scss'
 
 function Tracks(props) {
   return (
     <div className="tracks">
-      Tracks
+      {props.tracks.map(item => {
+        return (
+          <div key={item.id}>{item.name}</div>
+        )
+      })}
     </div>
   )
 }
