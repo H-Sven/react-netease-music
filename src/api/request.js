@@ -2,13 +2,13 @@
  * @Author: Siwen
  * @Date: 2019-08-08 13:47:01
  * @LastEditors: Siwen
- * @LastEditTime: 2019-10-10 16:55:36
+ * @LastEditTime: 2019-10-12 11:27:57
  * @Description: axios封装
  */
 import axios from 'axios'
 import qs from 'qs'
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
-axios.defaults.withCredentials = true //请求携带cookie
+axios.defaults.withCredentials = true
 axios.defaults.baseURL = process.env.REACT_APP_API_URL
 // 公共参数
 const publicParams = {}
@@ -25,12 +25,11 @@ const cancelPending = (config) => {
   })
 }
 //不进行防重处理的接口集合
-const noCancelPending = ['/order/createQuiz']
+const noCancelPending = []
 
 //request 拦截器
 axios.interceptors.request.use(
   config => {
-    config.headers['AHost'] = 'x_star'
     // 防止重复请求 ↓↓↓↓
     if (!noCancelPending.includes(config.url)) {
       cancelPending(config)

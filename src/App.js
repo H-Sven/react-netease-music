@@ -2,13 +2,13 @@
  * @Author: Siwen
  * @Date: 2019-09-16 10:47:29
  * @LastEditors: Siwen
- * @LastEditTime: 2019-10-10 18:49:01
+ * @LastEditTime: 2019-10-12 11:29:56
  * @Description: 
  */
 import React, { Suspense } from 'react'
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 import Routers from './router'
-import './App.scss';
+import './App.scss'
 function App() {
   return (
     <>

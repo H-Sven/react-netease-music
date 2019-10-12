@@ -2,7 +2,7 @@
  * @Author: Siwen
  * @Date: 2019-10-11 13:56:20
  * @LastEditors: Siwen
- * @LastEditTime: 2019-10-11 15:25:57
+ * @LastEditTime: 2019-10-12 11:29:25
  * @Description: 工具函数
  */
 
@@ -20,6 +20,7 @@ export const debounce = (func, delay) => {
   }
 }
 
+/* 数字过滤 */
 export const filterCount = count => {
   if (`${parseInt(count)}`.length >= 5) {
     return `${parseInt(count / 10000)}万`
