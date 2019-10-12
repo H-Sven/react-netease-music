@@ -54,12 +54,10 @@ function Detail(props) {
         <div className="title">{title}</div>
       </div>
       <Scroll onScroll={handleScroll}>
-        {loading ? <Loading /> :
-          <div>
-            {JSON.stringify(detailInfo) !== '{}' && <DetailInfo detailInfo={detailInfo} opacity={opacity} />}
-            {tracks.length > 0 && <Tracks tracks={tracks} subscribedCount={detailInfo.subscribedCount} collect={true} />}
-          </div>
-        }
+        <div>
+          {JSON.stringify(detailInfo) !== '{}' && <DetailInfo detailInfo={detailInfo} opacity={opacity} />}
+          {tracks.length > 0 && <Tracks tracks={tracks} subscribedCount={detailInfo.subscribedCount} collect={true} />}
+        </div>
       </Scroll>
     </div>
   )
