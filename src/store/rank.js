@@ -2,7 +2,7 @@
  * @Author: Siwen
  * @Date: 2019-10-11 10:17:13
  * @LastEditors: Siwen
- * @LastEditTime: 2019-10-11 11:38:29
+ * @LastEditTime: 2019-10-12 13:58:25
  * @Description: 排行榜
  */
 import { toplistDetail } from '../api/index'

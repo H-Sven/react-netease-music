@@ -2,12 +2,14 @@ import React, { useState, useEffect } from 'react'
 import Scroll from '../../components/Scroll'
 import DetailInfo from './DetailInfo/index'
 import Tracks from '../../components/Tracks/index'
+import Loading from '../../components/Loading/index'
 import { palylistDetail } from '../../api/index'
 import './index.scss'
 
 function Detail(props) {
   const { match } = props
   const [title, setTitle] = useState('歌单')
+  const [loading, changeLoading] = useState(true)
   const [detailInfo, setDetailInfo] = useState({})
   const [tracks, setTracks] = useState([])
   const [opacity, changeOpacity] = useState({})
@@ -23,6 +25,9 @@ function Detail(props) {
         avatarUrl: res.playlist.creator.avatarUrl,
       })
       setTracks(res.playlist.tracks)
+      changeLoading(false)
+    }).catch(err => {
+      changeLoading(false)
     })
   }, [])
   const handleScroll = (pos) => {
@@ -49,10 +54,12 @@ function Detail(props) {
         <div className="title">{title}</div>
       </div>
       <Scroll onScroll={handleScroll}>
-        <div>
-          {JSON.stringify(detailInfo) !== '{}' && <DetailInfo detailInfo={detailInfo} opacity={opacity} />}
-          {tracks.length > 0 && <Tracks tracks={tracks} subscribedCount={detailInfo.subscribedCount} collect={true} />}
-        </div>
+        {loading ? <Loading /> :
+          <div>
+            {JSON.stringify(detailInfo) !== '{}' && <DetailInfo detailInfo={detailInfo} opacity={opacity} />}
+            {tracks.length > 0 && <Tracks tracks={tracks} subscribedCount={detailInfo.subscribedCount} collect={true} />}
+          </div>
+        }
       </Scroll>
     </div>
   )

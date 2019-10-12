@@ -2,11 +2,10 @@
  * @Author: Siwen
  * @Date: 2019-09-17 14:29:01
  * @LastEditors: Siwen
- * @LastEditTime: 2019-10-11 11:10:14
+ * @LastEditTime: 2019-10-12 13:54:58
  * @Description: 路由表
  */
 import React from 'react'
-// const Recommend = React.lazy(() => import('../views/Recommend'))
 import Recommend from '../views/Recommend'
 import Singers from '../views/Singers'
 import Rank from '../views/Rank'
