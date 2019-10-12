@@ -2,7 +2,7 @@
  * @Author: Siwen
  * @Date: 2019-10-11 13:58:25
  * @LastEditors: Siwen
- * @LastEditTime: 2019-10-11 15:03:55
+ * @LastEditTime: 2019-10-12 11:21:38
  * @Description: 封装scroll
  */
 
@@ -51,7 +51,7 @@ const Scroll = forwardRef((props, ref) => {
     })
     return () => {
       bScroll.off('scroll')
-    };
+    }
   }, [onScroll, bScroll])
 
   useEffect(() => {

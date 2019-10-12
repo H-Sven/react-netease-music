@@ -1,0 +1,92 @@
+.tracks {
+  background-color: #fff;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  overflow-x: hidden;
+  .head {
+    width: 100vw;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid rgb(228, 228, 228);
+    .left {
+      display: flex;
+      align-items: center;
+      color: rgb(46, 48, 48);
+      font-size: 32px;
+      .icon-bofang {
+        font-size: 50px;
+        margin-right: 20px;
+        margin-left: 20px;
+      }
+      .title {
+        span {
+          font-size: 24px;
+          color: rgb(187, 168, 168);
+          margin-left: 10px;
+        }
+      }
+    }
+    .right {
+      min-width: 260px;
+      height: 100%;
+      color: rgb(241, 241, 241);
+      background: rgb(212, 68, 57);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .icon-hao {
+        font-size: 20px;
+        margin: 0px 10px 0px 20px;
+      }
+      .collect {
+        font-size: 28px;
+      }
+    }
+  }
+  .tracks_list {
+    .tracks_item {
+      display: flex;
+      height: 120px;
+      -webkit-box-align: center;
+      align-items: center;
+      .index {
+        flex-basis: 120px;
+        width: 120px;
+        height: 120px;
+        line-height: 120px;
+        text-align: center;
+        font-size: 30px;
+        color: rgb(46, 48, 48);
+      }
+      .info {
+        box-sizing: border-box;
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+        justify-content: space-around;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        flex: 1 1 0%;
+        padding: 10px 0px;
+        border-bottom: 2px solid rgb(228, 228, 228);
+        overflow: hidden;
+        span {
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
+          &:first-child {
+            font-size: 30px;
+            color: rgb(46, 48, 48);
+          }
+          &:last-child {
+            font-size: 24px;
+            color: rgb(187, 168, 168);
+          }
+        }
+      }
+    }
+  }
+}

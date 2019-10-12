@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Scroll from '../../components/Scroll'
 import DetailInfo from './DetailInfo/index'
-import Tracks from './Tracks/index'
+import Tracks from '../../components/Tracks/index'
 import { palylistDetail } from '../../api/index'
 import './index.scss'
 
@@ -10,10 +10,7 @@ function Detail(props) {
   const [title, setTitle] = useState('歌单')
   const [detailInfo, setDetailInfo] = useState({})
   const [tracks, setTracks] = useState([])
-  const [opacity, changeOpacity] = useState({
-    opacity: 1,
-    backgroundColor: ''
-  })
+  const [opacity, changeOpacity] = useState({})
 
   
   useEffect(() => {
@@ -29,7 +26,7 @@ function Detail(props) {
     })
   }, [])
   const handleScroll = (pos) => {
-    let minScrollY = -45
+    let minScrollY = -90
     let percent = Math.abs(pos.y/minScrollY)
     if (pos.y < minScrollY) {
       changeOpacity({
@@ -51,10 +48,10 @@ function Detail(props) {
         <i className="iconfont icon-xia"></i>
         <div className="title">{title}</div>
       </div>
-      <Scroll onScroll = { handleScroll }>
+      <Scroll onScroll={handleScroll}>
         <div>
           {JSON.stringify(detailInfo) !== '{}' && <DetailInfo detailInfo={detailInfo} opacity={opacity} />}
-          {tracks.length > 0 && <Tracks tracks={tracks} />}
+          {tracks.length > 0 && <Tracks tracks={tracks} subscribedCount={detailInfo.subscribedCount} collect={true} />}
         </div>
       </Scroll>
     </div>
